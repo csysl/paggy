@@ -12,29 +12,131 @@ import operator
 from functools import reduce
 from Cryptodome.Util import number as prime
 from encrytion.mod import *
+import random
 import time
 
 
-class Encrytion:
+# 产生一个大小为length*length的Zn内的矩阵
+def gainMatinN(length, N):
+    res = [[0] * length for i in range(length)]
+    for i in range(length):
+        for j in range(length):
+            res[i][j] = prime.getRandomRange(0, N)  # a <= n < b
+    return res
+
+
+# 产生矩阵k的模N矩阵
+def gainInvk(k, N):
+    res = [[0] * 4 for i in range(4)]
+    # 行列式
+    det = gainMatrixDeternminant(k)
+    if det % N != 0:
+        # det 的模n逆元素
+        invdet = mul_inv(det % N, N)
+        # 得到伴随矩阵
+        adjmatrix = gainAdjMatrix(k)
+        # 得到模逆矩阵
+        for i in range(4):
+            for j in range(4):
+                res[i][j] = (adjmatrix[i][j] * invdet) % N
+        return res
+
+    print('当前矩阵不可逆')
+    return True
+
+
+# 检查两个矩阵是不是模n的逆矩阵
+def check_KandInvK(K, invK, N):
+    def checkone(m):
+        for i in range(len(m)):
+            for j in range(len(m)):
+                if i == j and m[i][j] != 1:
+                    return False
+                elif i != j and m[i][j] != 0:
+                    return False
+        return True
+
+    res = mul_matmod(K, invK, 4, N)
+    if checkone(res):
+        # print('生成的矩阵和模逆矩阵正确')
+        return True
+    else:
+        # print('生成的矩阵和模逆矩阵不正确，重新生成矩阵和模逆矩阵')
+        return False
+
+
+# 检查两个矩阵相乘等不等于第三个矩阵
+def check_K1andK2(K1,K2,K,N):
+    n=len(K)
+    tmp=mul_matmod(K1,K2,n,N)
+    for i in range(n):
+        for j in range(n):
+            if tmp[i][j]!=K[i][j]:
+                return False
+    return True
+
+
+class Encryption:
+    """实际只需要知道N,R,K,K'四个值即可"""
 
     def __init__(self, M, bits=512):
         self.__M = M
         self.__P, self.__Q, self.__F = [], [], []
-        self.__N = None
-        self.__K, self.__invK = None, None  # 矩阵以及模逆矩阵
-        self.__det = None
+        self.__N = -1
+        self.__R = -1
+        self.__A, self.__B, self.__C = [], [], []
+        self.__a, self.__b, self.__c = -1, -1, -1
         self.__bits = bits
 
-    def gainKey(self):
-        # todo 生成密钥
+        # matrix
+        self.__K, self.__invK = None, None  # 矩阵以及模逆矩阵
+        self.__K1, self.__K2, self.__invK1, self.__invK2 = None, None, None, None
+        self.__Kcs1, self.__Kcs2, self.__invKcs1, self.__invKsc2 = None, None, None, None
+        self.__diag = None
+
+    # todo 生成矩阵k和模逆矩阵k'  参数R
+    def gainParam(self):
         stime = time.time()
         self.__gainPandQ()
         self.__gainF()
         self.__gainN()
         # self.__gainK()
         self.__gaininvK()  # 在此处执行gainK
+        self.__gainKey1()  # 生成用户和服务器的密钥
+        self.__gainKey2()  # 生成服务器之间的密钥
+        self.__gainR()
         etime = time.time()
         print('生成key的时间是：%fs' % (etime - stime))
+
+    # 随机产生一个明文
+    def gainPlain(self):
+        return prime.getRandomRange(0, self.__N)
+
+    # todo 加密密文
+    def encryption(self, plain):
+        stime = time.time()
+        self.__gainABC(plain)
+        self.__gainabc()
+        self.__A.clear(), self.__B.clear(), self.__C.clear()  # 多像素加密时清空，因为产生ABC使用的是append方式
+        self.__gainDiag(plain)  # 产生对角矩阵
+        res = mul_matmod(self.__invK, self.__diag, 4, self.__N)
+        res = mul_matmod(res, self.__K, 4, self.__N)
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+        return res
+
+    # todo 解密
+    def decryption(self, cipher):
+        stime = time.time()
+        for i in range(len(cipher)):
+            for j in range(len(cipher[0])):
+                cipher[i][j] %= self.__N
+
+        res = mul_matmod(self.__K, cipher, 4, self.__N)
+        res = mul_matmod(res, self.__invK, 4, self.__N)
+        etime = time.time()
+        print('解密的时间是：%fs' % (etime - stime))
+        return res[0][0]
 
     def __gainPandQ(self):
         for i in range(self.__M):
@@ -53,57 +155,155 @@ class Encrytion:
         # print('%x'%self.__N)
 
     def __gainK(self):
-        self.__K = [[0] * 4 for i in range(4)]
-        for i in range(4):
-            for j in range(4):
-                self.__K[i][j] = prime.getRandomRange(0, self.__N)  # a <= n < b
+        self.__K = gainMatinN(4, self.__N)
 
     def __gaininvK(self):
         while True:
-            while True:
+            """while True:
                 self.__gainK()
-                self.__det = gainMatrixDeternminant(self.__K)
-                if self.__det % self.__N != 0:
+                det = gainMatrixDeternminant(self.__K)
+                if det % self.__N != 0:
                     break
             # det 的模n逆元素
-            invdet = mul_inv(self.__det % self.__N, self.__N)
+            invdet = mul_inv(det % self.__N, self.__N)
             # 得到伴随矩阵
             adjmatrix = gainAdjMatrix(self.__K)
             # 得到模逆矩阵
             self.__invK = [[0] * 4 for i in range(4)]
             for i in range(4):
                 for j in range(4):
-                    self.__invK[i][j] = (adjmatrix[i][j] * invdet) % self.__N
+                    self.__invK[i][j] = (adjmatrix[i][j] * invdet) % self.__N"""
+            while True:
+                self.__gainK()
+                self.__invK = gainInvk(self.__K, self.__N)
+                if self.__invK == True:
+                    continue
+                else:
+                    break
             # 检查模逆矩阵的正确性
-            if self.__check_KandInvK():
+            if check_KandInvK(self.__K, self.__invK, self.__N):
+                print('生成的密钥K和invK正确')
                 break
+            else:
+                print('生成的密钥K和invK不正确！！！！')
 
-        # print('det:%x' % self.__det)
-
-    def __check_KandInvK(self):
-        def checkone(m):
-            for i in range(len(m)):
-                for j in range(len(m)):
-                    if i == j and m[i][j] != 1:
-                        return False
-                    elif i != j and m[i][j] != 0:
-                        return False
-            return True
-
-        res = mul_matmod(self.__K, self.__invK, 4, self.__N)
-        if checkone(res):
-            print('生成的矩阵和模逆矩阵正确')
-            return True
+    # TODO 生成用户和服务器的密钥
+    def __gainKey1(self):
+        # 产生密钥k1和k1'
+        while True:
+            while True:
+                self.__K1 = gainMatinN(4, self.__N)
+                self.__invK1 = gainInvk(self.__K1, self.__N)
+                if self.__invK1 == True:
+                    continue
+                else:
+                    break
+            # 检查模逆矩阵的正确性
+            if check_KandInvK(self.__K1, self.__invK1, self.__N):
+                print('生成的密钥K1和invK1正确')
+                break
+            else:
+                print('生成的密钥K1和invK1不正确！！！！')
+        # 产生密钥k2和k2'
+        self.__K2 = mul_matmod(self.__invK1, self.__K, 4, self.__N)
+        self.__invK2 = gainInvk(self.__K2, self.__N)
+        if check_KandInvK(self.__K2, self.__invK2, self.__N):
+            print('生成的密钥K2和invK2正确')
         else:
-            print('生成的矩阵和模逆矩阵不正确，重新生成矩阵和模逆矩阵')
-            return False
+            print('生成的密钥K2和invK2不正确！！！！')
 
-    def writeFile(self):  # 将算法得到的信息记录到文本
+        # check
+        if check_K1andK2(self.__K1,self.__K2,self.__K,self.__N):
+            print('生成的K1和K2是正确的')
+        else:
+            print('生成的K1和K2不正确！！！')
+        if check_K1andK2(self.__invK2,self.__invK1,self.__invK,self.__N):
+            print('生成的invK1和invK2是正确的')
+        else:
+            print('生成的invK1和invK2不正确！！！')
+
+    # TODO 生成服务器之间的密钥
+    def __gainKey2(self):
+        # 产生密钥Kcs1和Kcs1'
+        while True:
+            while True:
+                self.__Kcs1 = gainMatinN(4, self.__N)
+                self.__invKcs1 = gainInvk(self.__Kcs1, self.__N)
+                if self.__invKcs1 == True:
+                    continue
+                else:
+                    break
+            # 检查模逆矩阵的正确性
+            if check_KandInvK(self.__Kcs1, self.__invKcs1, self.__N):
+                print('生成的密钥Kcs1和invKcs1正确')
+                break
+            else:
+                print('生成的密钥Kcs1和invKcs1不正确！！！！')
+
+        # 产生密钥Kcs2和Kcs2'
+        self.__Kcs2 = mul_matmod(self.__invKcs1, self.__K, 4, self.__N)
+        self.__invKcs2 = gainInvk(self.__Kcs2, self.__N)
+        if check_KandInvK(self.__Kcs2, self.__invKcs2, self.__N):
+            print('生成的密钥Kcs2和invKcs2正确')
+        else:
+            print('生成的密钥Kcs2和invKcs2不正确！！！！')
+        # check
+        if check_K1andK2(self.__Kcs1, self.__Kcs2, self.__K, self.__N):
+            print('生成的Kcs1和Kcs2是正确的')
+        else:
+            print('生成的Kcs1和Kcs2不正确！！！')
+        if check_K1andK2(self.__invKcs2, self.__invKcs1, self.__invK, self.__N):
+            print('生成的invKcs1和invKcs2是正确的')
+        else:
+            print('生成的invKcs1和invKcs2不正确！！！')
+
+    def __gainR(self):
+        self.__R = prime.getRandomRange(0, self.__N)
+
+    def __gainABC(self, plain):
+        for i in range(self.__M):
+            tmp = random.random()
+            # tmp=0.5
+            if tmp < self.__M / (self.__M + 1):
+                self.__A.append(plain)
+                self.__B.append(self.__R)
+                self.__C.append(self.__R)
+            elif tmp >= self.__M / (self.__M + 1) and tmp < 1 - 1 / (2 * (self.__M + 1)):
+                self.__A.append(self.__R)
+                self.__B.append(plain)
+                self.__C.append(self.__R)
+            else:
+                self.__A.append(self.__R)
+                self.__B.append(self.__R)
+                self.__C.append(plain)
+
+    def __gainabc(self):
+        from modint import chinese_remainder
+        self.__a = chinese_remainder(self.__F, self.__A) % self.__N
+        self.__b = chinese_remainder(self.__F, self.__B) % self.__N
+        self.__c = chinese_remainder(self.__F, self.__C) % self.__N
+
+    def __gainDiag(self, plain):
+        self.__diag = [[0] * 4 for i in range(4)]
+        self.__diag[0][0] = plain
+        self.__diag[1][1], self.__diag[2][2], self.__diag[3][3] = self.__a, self.__b, self.__c
+
+    def writeFile(self, path='./'):  # 将算法得到的信息记录到文本
         pass
+
+    @property
+    def N(self):
+        return self.__N
 
 
 if __name__ == '__main__':
-    encry = Encrytion(2, 512)
-    encry.gainKey()
+    encry = Encryption(16, 512)
+    encry.gainParam()
+
+    a = encry.gainPlain()
+    print('plaintext is %x' % a)
+    res = encry.encryption(a)
+    a = encry.decryption(res)
+    print('decrypt result is %x' % a)
 
     pass

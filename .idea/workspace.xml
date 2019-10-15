@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/paggy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/paggy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encrytion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encrytion/encrytion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/encrytion/getprime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encrytion/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +100,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/encrytion" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -126,6 +122,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -159,7 +158,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571130439629</updated>
       <workItem from="1571130440854" duration="688000" />
-      <workItem from="1571131608788" duration="5411000" />
+      <workItem from="1571131608788" duration="6927000" />
+      <workItem from="1571154377628" duration="7517000" />
     </task>
     <servers />
   </component>
