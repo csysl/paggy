@@ -9,6 +9,7 @@
     @ref:
 '''
 
+from functools import reduce
 
 # 求解a的模n的逆元素
 def mul_inv(a, n):
@@ -21,6 +22,14 @@ def mul_inv(a, n):
         x0, x1 = x1 - q * x0, x0
     if x1 < 0: x1 += b
     return x1
+
+def chineseremainder(n, a):  # n是模数，a是被模数
+    sum = 0
+    prod = reduce(lambda a, b: a * b, n)
+    for n_i, a_i in zip(n, a):
+        p = prod // n_i
+        sum += a_i * mul_inv(p, n_i) * p
+    return sum % prod
 
 # 定义矩阵a*矩阵b 模 m,n是a,b的维度， 定义a,b为方阵
 def mul_matmod(a, b, n, m):

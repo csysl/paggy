@@ -32,7 +32,7 @@ def gainInvk(k, N):
     det = gainMatrixDeternminant(k)
     if det % N != 0:
         # det 的模n逆元素
-        invdet = mul_inv(det % N, N)
+        invdet = prime.inverse(det % N, N)
         # 得到伴随矩阵
         adjmatrix = gainAdjMatrix(k)
         # 得到模逆矩阵
@@ -122,10 +122,7 @@ class Encryption:
         self.__gainabc()
         etime = time.time()
         print('产生abc的时间是：%fs' % (etime - stime))
-        stime = time.time()
         self.__A.clear(), self.__B.clear(), self.__C.clear()  # 多像素加密时清空，因为产生ABC使用的是append方式
-        etime = time.time()
-        print('加密的时间是：%fs' % (etime - stime))
         stime = time.time()
         self.__gainDiag(plain)  # 产生对角矩阵
         etime = time.time()
@@ -177,7 +174,7 @@ class Encryption:
                 if det % self.__N != 0:
                     break
             # det 的模n逆元素
-            invdet = mul_inv(det % self.__N, self.__N)
+            invdet = prime.inverse(det % self.__N, self.__N)
             # 得到伴随矩阵
             adjmatrix = gainAdjMatrix(self.__K)
             # 得到模逆矩阵
@@ -321,7 +318,7 @@ class Encryption:
 
     @property
     def cs1K(self):
-        return self.__K2, self.__invK2, self.__Kcs1, self.__invKcs1
+        return self.__K2, self.__invK2, self.__Kcs2, self.__invKcs2
 
 
 if __name__ == '__main__':
