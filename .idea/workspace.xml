@@ -2,12 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/denoising/CS1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/denoising/CS2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/denoising/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/baboon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/barbara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/boat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/bridge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/cameraman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/couple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/hill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/house.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/lena.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/man.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/monarch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/parrot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/peppers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encrytion/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="MarkDown" />
         <option value="Python Script" />
       </list>
     </option>
@@ -33,14 +54,21 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1SEKfhghw6PBwy46OdVBiJswXAZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pag2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.encrytion">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +109,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/encrytion" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -88,6 +119,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/encrytion/encrypt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="paggy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,6 +192,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.mod" />
         <item itemvalue="Python.test" />
       </list>
@@ -159,7 +210,8 @@
       <updated>1571130439629</updated>
       <workItem from="1571130440854" duration="688000" />
       <workItem from="1571131608788" duration="6927000" />
-      <workItem from="1571154377628" duration="7517000" />
+      <workItem from="1571154377628" duration="7751000" />
+      <workItem from="1571194138099" duration="3938000" />
     </task>
     <servers />
   </component>
@@ -178,6 +230,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/encrytion/encrypt.py</url>
+          <line>290</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paggy$encrytion.coverage" NAME="encrytion Coverage Results" MODIFIED="1571130505672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/encrytion" />

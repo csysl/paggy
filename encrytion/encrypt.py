@@ -122,7 +122,7 @@ class Encryption:
         res = mul_matmod(self.__invK, self.__diag, 4, self.__N)
         res = mul_matmod(res, self.__K, 4, self.__N)
         etime = time.time()
-        print('加密的时间是：%fs' % (etime - stime))
+        # print('加密的时间是：%fs' % (etime - stime))
         return res
 
     # todo 解密
@@ -294,6 +294,10 @@ class Encryption:
     @property
     def N(self):
         return self.__N
+    @property
+    def userK(self):
+        return self.__K1,self.__invK1
+
 
 
 if __name__ == '__main__':
