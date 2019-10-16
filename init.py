@@ -12,8 +12,8 @@
 import numpy as np
 
 # todo image
-# imagepath = 'testimage/1.jpg'
-imagepath = 'images/lena.png'
+imagepath = 'testimage/1.jpg'
+# imagepath = 'img/lena.png'
 
 # todo 局部均值滤波
 L = 7  # 滤波窗口的大小   21                                7
@@ -32,4 +32,4 @@ SCAL = 37889
 """下面是没有使用到的参数"""
 # todo encryption
 M = 10  # 加密算法的M值  #
-bits=512  # 加密算法产生的密钥长度为2*M*bits
+bits=20  # 加密算法产生的密钥长度为2*M*bits

@@ -66,12 +66,12 @@ def check_KandInvK(K, invK, N):
 
 
 # 检查两个矩阵相乘等不等于第三个矩阵
-def check_K1andK2(K1,K2,K,N):
-    n=len(K)
-    tmp=mul_matmod(K1,K2,n,N)
+def check_K1andK2(K1, K2, K, N):
+    n = len(K)
+    tmp = mul_matmod(K1, K2, n, N)
     for i in range(n):
         for j in range(n):
-            if tmp[i][j]!=K[i][j]:
+            if tmp[i][j] != K[i][j]:
                 return False
     return True
 
@@ -116,13 +116,25 @@ class Encryption:
     def encryption(self, plain):
         stime = time.time()
         self.__gainABC(plain)
+        etime = time.time()
+        print('产生ABC的时间是：%fs' % (etime - stime))
+        stime = time.time()
         self.__gainabc()
+        etime = time.time()
+        print('产生abc的时间是：%fs' % (etime - stime))
+        stime = time.time()
         self.__A.clear(), self.__B.clear(), self.__C.clear()  # 多像素加密时清空，因为产生ABC使用的是append方式
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+        stime = time.time()
         self.__gainDiag(plain)  # 产生对角矩阵
+        etime = time.time()
+        print('产生对角矩阵的时间是：%fs' % (etime - stime))
+        stime = time.time()
         res = mul_matmod(self.__invK, self.__diag, 4, self.__N)
         res = mul_matmod(res, self.__K, 4, self.__N)
         etime = time.time()
-        # print('加密的时间是：%fs' % (etime - stime))
+        print('加密的时间是：%fs' % (etime - stime))
         return res
 
     # todo 解密
@@ -213,11 +225,11 @@ class Encryption:
             print('生成的密钥K2和invK2不正确！！！！')
 
         # check
-        if check_K1andK2(self.__K1,self.__K2,self.__K,self.__N):
+        if check_K1andK2(self.__K1, self.__K2, self.__K, self.__N):
             print('生成的K1和K2是正确的')
         else:
             print('生成的K1和K2不正确！！！')
-        if check_K1andK2(self.__invK2,self.__invK1,self.__invK,self.__N):
+        if check_K1andK2(self.__invK2, self.__invK1, self.__invK, self.__N):
             print('生成的invK1和invK2是正确的')
         else:
             print('生成的invK1和invK2不正确！！！')
@@ -294,14 +306,26 @@ class Encryption:
     @property
     def N(self):
         return self.__N
+
+    @property
+    def M(self):
+        return self.__M
+
+    @property
+    def F(self):
+        return self.__F
+
     @property
     def userK(self):
-        return self.__K1,self.__invK1
+        return self.__K1, self.__invK1
 
+    @property
+    def cs1K(self):
+        return self.__K2, self.__invK2, self.__Kcs1, self.__invKcs1
 
 
 if __name__ == '__main__':
-    encry = Encryption(16, 512)
+    encry = Encryption(10, 512)
     encry.gainParam()
 
     a = encry.gainPlain()
@@ -309,5 +333,3 @@ if __name__ == '__main__':
     res = encry.encryption(a)
     a = encry.decryption(res)
     print('decrypt result is %x' % a)
-
-

@@ -2,33 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/denoising/CS1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/denoising/CS2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/denoising/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/baboon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/barbara.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/boat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/bridge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/cameraman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/couple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/hill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/house.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/lena.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/man.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/monarch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/parrot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/peppers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/res1000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testimage/result6272.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/CS1.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/CS1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/USER.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encrytion/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,13 +54,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/img" />
     </key>
   </component>
@@ -109,9 +104,6 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/encrytion" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -211,7 +203,9 @@
       <workItem from="1571130440854" duration="688000" />
       <workItem from="1571131608788" duration="6927000" />
       <workItem from="1571154377628" duration="7751000" />
-      <workItem from="1571194138099" duration="3938000" />
+      <workItem from="1571194138099" duration="4092000" />
+      <workItem from="1571213675639" duration="579000" />
+      <workItem from="1571217989653" duration="9174000" />
     </task>
     <servers />
   </component>
@@ -236,7 +230,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/encrytion/encrypt.py</url>
-          <line>290</line>
+          <line>302</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
