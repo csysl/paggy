@@ -28,8 +28,9 @@ enctyptImage=user.encrypt()
 
 # cs得到加密图像，产生加密后的距离
 cs=CS(encryptImage=enctyptImage,TP=TP)
-cs.encryptI()  #对来自用户的图片进行加密，等同于对图像I使用k加密
+cs.CS1encryptI()  #对来自用户的图片进行加密，等同于对图像I使用k加密
 # cs.testdecryption() #测试函数
+cs.Denoising()
 
 
 user.decrypt(enctyptImage)

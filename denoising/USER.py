@@ -41,7 +41,7 @@ class USER:
         self.__A, self.__B, self.__C = [], [], []
         self.__a, self.__b, self.__c = -1, -1, -1
         self.__diag = [[0] * 4 for i in range(4)]  # 对角矩阵
-        self.__pro_num = 4#cpu_count()  # 获取cpu的线程数
+        # self.__pro_num = 4#cpu_count()  # 获取cpu的线程数
         # print(self.__pro_num)
 
     # TODO 外部执行的加密函数
