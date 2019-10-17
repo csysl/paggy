@@ -14,6 +14,7 @@ from Cryptodome.Util import number as prime
 from encrytion.mod import *
 import random
 import time
+import numpy as np
 
 
 # 产生一个大小为length*length的Zn内的矩阵
@@ -112,6 +113,64 @@ class Encryption:
     def gainPlain(self):
         return prime.getRandomRange(0, self.__N)
 
+    def test(self, plain):
+        stime = time.time()
+        self.__gainABC(plain)
+        etime = time.time()
+        print('产生ABC的时间是：%fs' % (etime - stime))
+        stime = time.time()
+        self.__gainabc()
+        etime = time.time()
+        print('产生abc的时间是：%fs' % (etime - stime))
+        self.__A.clear(), self.__B.clear(), self.__C.clear()  # 多像素加密时清空，因为产生ABC使用的是append方式
+        stime = time.time()
+        self.__gainDiag(plain)  # 产生对角矩阵
+        etime = time.time()
+        print('产生对角矩阵的时间是：%fs' % (etime - stime))
+        stime = time.time()
+        res = mul_matmod(self.__invK1, self.__diag, 4, self.__N)
+        res = mul_matmod(res, self.__K1, 4, self.__N)
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+
+        stime = time.time()
+        res = mul_matmod(self.__invK2, res, 4, self.__N)
+        res = mul_matmod(res, self.__K2, 4, self.__N)
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+
+        stime = time.time()
+        res = mul_matmod(self.__Kcs2, res, 4, self.__N)
+        res = mul_matmod(res, self.__invKcs2, 4, self.__N)
+        etime = time.time()
+        print('解密的时间是：%fs' % (etime - stime))
+
+        stime = time.time()
+        res = mul_matmod(self.__Kcs1, res, 4, self.__N)
+        res = mul_matmod(res, self.__invKcs1, 4, self.__N)
+        etime = time.time()
+        print('解密的时间是：%fs' % (etime - stime))
+        print(res[0][0])
+
+        stime = time.time()
+        res = mul_matmod(self.__invKcs1, res, 4, self.__N)
+        res = mul_matmod(res, self.__Kcs1, 4, self.__N)
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+
+        stime = time.time()
+        res = mul_matmod(self.__invKcs2, res, 4, self.__N)
+        res = mul_matmod(res, self.__Kcs2, 4, self.__N)
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+
+        # stime = time.time()
+        # res = np.dot(self.__invK, self.__diag) % self.__N
+        # res = np.dot(res, self.__K) % self.__N
+        # etime = time.time()
+        # print('加密的时间是：%fs' % (etime - stime))
+        return res
+
     # todo 加密密文
     def encryption(self, plain):
         stime = time.time()
@@ -130,6 +189,11 @@ class Encryption:
         stime = time.time()
         res = mul_matmod(self.__invK, self.__diag, 4, self.__N)
         res = mul_matmod(res, self.__K, 4, self.__N)
+        etime = time.time()
+        print('加密的时间是：%fs' % (etime - stime))
+        stime = time.time()
+        res = np.dot(self.__invK, self.__diag) % self.__N
+        res = np.dot(res, self.__K) % self.__N
         etime = time.time()
         print('加密的时间是：%fs' % (etime - stime))
         return res
@@ -310,23 +374,36 @@ class Encryption:
 
     @property
     def F(self):
-        return self.__F
+        return self.__F[:]
 
     @property
     def userK(self):
-        return self.__K1, self.__invK1
+        return self.__K1[:], self.__invK1[:]
 
     @property
     def cs1K(self):
-        return self.__K2, self.__invK2, self.__Kcs2, self.__invKcs2
+        return self.__K2[:], self.__invK2[:], self.__Kcs2[:], self.__invKcs2[:]
+
+    @property
+    def cs2K(self):
+        return self.__Kcs1[:], self.__invKcs1[:]
+
+    @property
+    def K(self):
+        return self.__K[:], self.__invK[:]
 
 
 if __name__ == '__main__':
     encry = Encryption(10, 512)
     encry.gainParam()
-
     a = encry.gainPlain()
-    print('plaintext is %x' % a)
-    res = encry.encryption(a)
-    a = encry.decryption(res)
-    print('decrypt result is %x' % a)
+    print(a)
+    a = encry.test(a)
+    a = encry.decryption(a)
+    print(a)
+    # for i in range(3):
+    #     a = encry.gainPlain()
+    #     print('plaintext is %x' % a)
+    #     res = encry.encryption(a)
+    #     a = encry.decryption(res)
+    #     print('decrypt result is %x' % a)

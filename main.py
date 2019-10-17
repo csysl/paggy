@@ -12,7 +12,7 @@ import cv2
 import init
 from encrytion.encrypt import Encryption
 from denoising.USER import USER
-from denoising.CS1 import CS1
+from denoising.CS import CS
 
 # todo 读取图片
 # img = io.imread(init.imagepath)  # length*width*(r,g,b)
@@ -26,8 +26,10 @@ TP.gainParam()  #生成密钥和参数
 user=USER(image=img,TP=TP)
 enctyptImage=user.encrypt()
 
-# cs1得到加密图像，产生加密后的距离
-cs1=CS1(encryptImage=enctyptImage,TP=TP)
+# cs得到加密图像，产生加密后的距离
+cs=CS(encryptImage=enctyptImage,TP=TP)
+cs.encryptI()  #对来自用户的图片进行加密，等同于对图像I使用k加密
+# cs.testdecryption() #测试函数
 
 
 user.decrypt(enctyptImage)
