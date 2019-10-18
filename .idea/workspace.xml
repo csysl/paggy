@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" afterDir="false" />
@@ -9,9 +10,12 @@
       <change beforePath="$PROJECT_DIR$/../pag2/image/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/image/image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/init.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/resimage/H=20-SCAL=37889-sigma=0.1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/resimage/H=20-SCAL=37889-sigma=0.1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/denoising/CS.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/CS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/denoising/USER.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encrytion/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -62,7 +66,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -109,6 +113,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/encrytion" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -128,6 +135,9 @@
       <module name="pag2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../pag2/image" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -147,6 +157,9 @@
       <module name="pag2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../pag2" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -225,9 +238,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.image" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.mod" />
       </list>
     </recent_temporary>
@@ -248,7 +261,10 @@
       <workItem from="1571194138099" duration="4092000" />
       <workItem from="1571213675639" duration="579000" />
       <workItem from="1571217989653" duration="16037000" />
-      <workItem from="1571296380252" duration="17422000" />
+      <workItem from="1571296380252" duration="17561000" />
+      <workItem from="1571329395562" duration="2180000" />
+      <workItem from="1571332605047" duration="1353000" />
+      <workItem from="1571365160076" duration="4180000" />
     </task>
     <servers />
   </component>
@@ -288,38 +304,54 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
-          <line>150</line>
+          <line>168</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
-          <line>83</line>
+          <line>108</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
-          <line>116</line>
+          <line>140</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
-          <line>114</line>
+          <line>137</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
-          <line>168</line>
-          <option name="timeStamp" value="15" />
+          <line>215</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
-          <line>184</line>
-          <option name="timeStamp" value="16" />
+          <line>152</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/denoising/CS.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/denoising/CS.py</url>
+          <line>193</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paggy$encrytion.coverage" NAME="encrytion Coverage Results" MODIFIED="1571130505672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/encrytion" />
+    <SUITE FILE_PATH="coverage/paggy$main.coverage" NAME="main Coverage Results" MODIFIED="1571365764103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

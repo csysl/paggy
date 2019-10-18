@@ -392,6 +392,10 @@ class Encryption:
     def K(self):
         return self.__K[:], self.__invK[:]
 
+    @property
+    def R(self):
+        return self.__R
+
 
 if __name__ == '__main__':
     encry = Encryption(10, 512)

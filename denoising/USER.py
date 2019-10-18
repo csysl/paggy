@@ -37,10 +37,13 @@ class USER:
         self.__N, self.__M, self.__F = TP.N, TP.M, TP.F
 
         # 加解密
-        self.__R = prime.getRandomRange(0, self.__N)
+        self.__R = TP.R
+        # self.__R = prime.getRandomRange(0, self.__N)  #todo R这里应该随机取还是和CS1取一样的R吗？不知道，先取成一致
         self.__A, self.__B, self.__C = [], [], []
         self.__a, self.__b, self.__c = -1, -1, -1
         self.__diag = [[0] * 4 for i in range(4)]  # 对角矩阵
+        self.__SCAL = init.SCAL
+
         # self.__pro_num = 4#cpu_count()  # 获取cpu的线程数
         # print(self.__pro_num)
 
@@ -48,17 +51,21 @@ class USER:
     def encrypt(self):
         # 获取灰度图
         self.__grayimage = copy.deepcopy(self.__image).tolist()
-        # imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
+        imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
         # 给灰度图添加高斯噪声
         self.__gaussgrayimage = self.__addgaussnoise()
-        # imageshow(self.__gaussgrayimage, 'gaussgrayimage')
+        imageshow(self.__gaussgrayimage, 'gaussgrayimage')
+        print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
         self.__encryptImage()
         return self.__encryimage[:]
 
     # TODO 外部执行的解密函数
     def decrypt(self, cipherimg):
         self.__decryptImage(cipherimg)
-        # imageshow(self.__denoiseimage, 'denoiseimage')
+        imageshow(self.__denoiseimage, 'denoiseimage')
+        print('去噪图像和源图像的PSNR是：',calPSNR(self.__grayimage,self.__denoiseimage))
+
+    #
 
     # todo 为灰度图添加高斯噪声
     def __addgaussnoise(self):
@@ -121,20 +128,20 @@ class USER:
         etime=time.time()
         print(etime-stime)"""
 
-        stime=time.time()
+        stime = time.time()
         for i in range(self.__length):
             for j in range(self.__width):
                 self.__encryimage[i][j] = self.__encryption(self.__gaussgrayimage[i][j])
         etime = time.time()
-        print('用户加密时间是：%fs'%(etime - stime))
+        print('用户加密时间是：%fs' % (etime - stime))
 
     # todo 解密函数，对服务器返回的图像解密
     def __decryptImage(self, image):
-        stime=time.time()
+        stime = time.time()
         self.__denoiseimage = [[None] * self.__width for i in range(self.__length)]
         for i in range(self.__length):
             for j in range(self.__width):
-                self.__denoiseimage[i][j] = self.__decryption(image[i][j])
+                self.__denoiseimage[i][j] = self.__decryption(image[i][j]) // self.__SCAL
         etime = time.time()
         print('用户解密时间是：%fs' % (etime - stime))
 

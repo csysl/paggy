@@ -24,13 +24,15 @@ TP.gainParam()  #生成密钥和参数
 
 # user产生加密图像
 user=USER(image=img,TP=TP)
-enctyptImage=user.encrypt()
+encryptImage=user.encrypt()
 
 # cs得到加密图像，产生加密后的距离
-cs=CS(encryptImage=enctyptImage,TP=TP)
+cs=CS(encryptImage=encryptImage,TP=TP)
 cs.CS1encryptI()  #对来自用户的图片进行加密，等同于对图像I使用k加密
 # cs.testdecryption() #测试函数
-cs.Denoising()
+cs.Cs1Cs2Denoising() #cs1和cs2去噪的全过程
+decryptImageRe=cs.CS1decryptI() #得到cs1一次解密后的去噪图片
 
+# 用户得到去噪后图片密文，然后进行解密
+user.decrypt(decryptImageRe)
 
-user.decrypt(enctyptImage)
