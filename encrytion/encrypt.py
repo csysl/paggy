@@ -362,7 +362,31 @@ class Encryption:
         self.__diag[1][1], self.__diag[2][2], self.__diag[3][3] = self.__a, self.__b, self.__c
 
     def writeFile(self, path='./'):  # 将算法得到的信息记录到文本
-        pass
+        def writeK(f, K):
+            for i in range(4):
+                for j in range(4):
+                    print(K[i][j], file=f, end=' ')
+                # f.write('\n')
+            f.write('\n')
+
+        with open('param'+str(self.__bits)+'.txt', 'w') as f:
+            for it in [self.__N, self.__M, self.__R]:
+                print(it, file=f, end=' ')
+            f.write('\n')
+            for it in self.__F:
+                print(it, file=f, end=' ')
+            f.write('\n')
+            writeK(f, self.__K1)
+            writeK(f, self.__invK1)
+            writeK(f, self.__K2)
+            writeK(f, self.__invK2)
+            writeK(f, self.__Kcs2)
+            writeK(f, self.__invKcs2)
+            writeK(f, self.__Kcs1)
+            writeK(f, self.__invKcs1)
+            f.close()
+
+
 
     @property
     def N(self):
@@ -371,6 +395,10 @@ class Encryption:
     @property
     def M(self):
         return self.__M
+
+    @property
+    def R(self):
+        return self.__R
 
     @property
     def F(self):
@@ -391,10 +419,6 @@ class Encryption:
     @property
     def K(self):
         return self.__K[:], self.__invK[:]
-
-    @property
-    def R(self):
-        return self.__R
 
 
 if __name__ == '__main__':
