@@ -13,23 +13,26 @@ from Cryptodome.Util import number
 import time
 import numpy as np
 
-kernel = np.ones((4, 4),dtype=object)
-b=kernel/np.power(16,2)
-#
-a=[]
-for i in range(4):
-    a.append([])
-    for j in range(4):
-        a[i].append(number.getRandomInteger(512))
-b=np.dot(a,a)
-print(b)
+print(pow(2,32)*4)
 
-a=np.array(a)
-print(a.dtype)
-c=np.dot(a,a)
-print(c)
-d=np.dot(a,b)
-print(np.ceil(np.dot(a,b)))
+
+# kernel = np.ones((4, 4),dtype=object)
+# b=kernel/np.power(16,2)
+# #
+# a=[]
+# for i in range(4):
+#     a.append([])
+#     for j in range(4):
+#         a[i].append(number.getRandomInteger(512))
+# b=np.dot(a,a)
+# print(b)
+#
+# a=np.array(a)
+# print(a.dtype)
+# c=np.dot(a,a)
+# print(c)
+# d=np.dot(a,b)
+# print(np.ceil(np.dot(a,b)))
 
 # a=np.array(range(1e100,1e200))
 

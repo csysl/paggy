@@ -370,7 +370,7 @@ class Encryption:
             f.write('\n')
 
         with open('param'+str(self.__bits)+'.txt', 'w') as f:
-            for it in [self.__N, self.__M, self.__R]:
+            for it in [self.__N, self.__M, self.__R,self.__bits]:
                 print(it, file=f, end=' ')
             f.write('\n')
             for it in self.__F:
