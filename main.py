@@ -21,7 +21,7 @@ img = cv2.imread(init.imagepath, cv2.IMREAD_GRAYSCALE)
 # TP为密钥生成器并生成密钥
 TP=Encryption(init.M,init.bits)
 TP.gainParam()  #生成密钥和参数
-TP.writeFile()  #将密钥写入到txt，目的是为了c++程序读取
+# TP.writeFile()  #将密钥写入到txt，目的是为了c++程序读取
 
 # user产生加密图像
 user=USER(image=img,TP=TP)

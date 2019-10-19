@@ -11,6 +11,10 @@
       <change beforePath="$PROJECT_DIR$/../pag2/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/init.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/resimage/H=20-SCAL=37889-sigma=0.1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/resimage/H=20-SCAL=37889-sigma=0.1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/USER.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -232,8 +236,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.image" />
         <item itemvalue="Python.mod" />
@@ -261,7 +265,9 @@
       <workItem from="1571332605047" duration="1353000" />
       <workItem from="1571365160076" duration="8647000" />
       <workItem from="1571415547004" duration="3754000" />
-      <workItem from="1571458088951" duration="5050000" />
+      <workItem from="1571458088951" duration="7170000" />
+      <workItem from="1571482668514" duration="1898000" />
+      <workItem from="1571497727097" duration="4519000" />
     </task>
     <servers />
   </component>
@@ -339,7 +345,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>29</line>
+          <line>39</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

@@ -12,8 +12,18 @@
 from Cryptodome.Util import number
 import time
 import numpy as np
+from modint import chinese_remainder
 
-print(pow(2,32)*4)
+# a=[]
+# b=[]
+# for i in range(4):
+#     a.append(number.getRandomInteger(64))
+#     b.append(number.getRandomInteger(64))
+# c=chinese_remainder(a,b)
+# print(a)
+
+
+# print(pow(2,32)*4)
 
 
 # kernel = np.ones((4, 4),dtype=object)

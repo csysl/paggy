@@ -51,10 +51,10 @@ class USER:
     def encrypt(self):
         # 获取灰度图
         self.__grayimage = copy.deepcopy(self.__image).tolist()
-        imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
+        # imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
         # 给灰度图添加高斯噪声
         self.__gaussgrayimage = self.__addgaussnoise()
-        imageshow(self.__gaussgrayimage, 'gaussgrayimage')
+        # imageshow(self.__gaussgrayimage, 'gaussgrayimage')
         print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
         self.__encryptImage()
         return self.__encryimage[:]
