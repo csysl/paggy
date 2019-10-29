@@ -11,6 +11,7 @@
 import copy
 import random
 import time
+import numba
 from Cryptodome.Util import number as prime
 from multiprocessing import cpu_count
 import multiprocessing as mp
@@ -48,6 +49,7 @@ class USER:
         # print(self.__pro_num)
 
     # TODO 外部执行的加密函数
+    # @numba.jit#(nopython=True)
     def encrypt(self):
         # 获取灰度图
         self.__grayimage = copy.deepcopy(self.__image).tolist()
@@ -63,7 +65,7 @@ class USER:
     def decrypt(self, cipherimg):
         self.__decryptImage(cipherimg)
         imageshow(self.__denoiseimage, 'denoiseimage')
-        print('去噪图像和源图像的PSNR是：',calPSNR(self.__grayimage,self.__denoiseimage))
+        print('去噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__denoiseimage))
 
     #
 
@@ -107,6 +109,7 @@ class USER:
         return res[0][0]
 
     # todo 加密函数，对输入的图像加密
+    # @numba.jit
     def __encryptImage(self):
         self.__encryimage = [[None] * self.__width for i in range(self.__length)]
 
@@ -171,3 +174,14 @@ class USER:
     def __gainDiag(self, plain):
         self.__diag[0][0] = plain
         self.__diag[1][1], self.__diag[2][2], self.__diag[3][3] = self.__a, self.__b, self.__c
+
+
+    def test(self):
+        pixel = 0
+        for i in range(self.__length):
+            for j in range(self.__width):
+                if self.__image[i][j] == self.__denoiseimage[i][j]:
+                    pixel += 1
+
+        print(pixel)
+        print('去噪前后重复像素的比例：%0.4f' % (pixel / self.__size))

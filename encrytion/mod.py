@@ -10,6 +10,7 @@
 '''
 
 from functools import reduce
+import numba
 
 # 求解a的模n的逆元素
 def mul_inv(a, n):
@@ -23,6 +24,7 @@ def mul_inv(a, n):
     if x1 < 0: x1 += b
     return x1
 
+@numba.jit  #实测没有加速
 def chineseremainder(n, a):  # n是模数，a是被模数
     sum = 0
     prod = reduce(lambda a, b: a * b, n)
@@ -32,6 +34,7 @@ def chineseremainder(n, a):  # n是模数，a是被模数
     return sum % prod
 
 # 定义矩阵a*矩阵b 模 m,n是a,b的维度， 定义a,b为方阵
+# @numba.jit
 def mul_matmod(a, b, n, m):
     res = [[0] * n for i in range(n)]
     for i in range(n):

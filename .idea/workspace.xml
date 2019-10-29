@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/param32.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/.idea/pag2.iml" afterDir="false" />
@@ -12,10 +11,8 @@
       <change beforePath="$PROJECT_DIR$/../pag2/resimage/H=20-SCAL=37889-sigma=0.1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../pag2/resimage/H=20-SCAL=37889-sigma=0.1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/denoising/USER.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/denoising/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encrytion/mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/mod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,6 +216,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -236,8 +236,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.image" />
         <item itemvalue="Python.mod" />
@@ -267,7 +267,17 @@
       <workItem from="1571415547004" duration="3754000" />
       <workItem from="1571458088951" duration="7170000" />
       <workItem from="1571482668514" duration="1898000" />
-      <workItem from="1571497727097" duration="4519000" />
+      <workItem from="1571497727097" duration="4858000" />
+      <workItem from="1571571693718" duration="812000" />
+      <workItem from="1571577262897" duration="2945000" />
+      <workItem from="1571585920738" duration="1387000" />
+      <workItem from="1571624032530" duration="651000" />
+      <workItem from="1571648920027" duration="1199000" />
+      <workItem from="1571668822025" duration="1891000" />
+      <workItem from="1571677962467" duration="646000" />
+      <workItem from="1571711779640" duration="285000" />
+      <workItem from="1571972240708" duration="6000" />
+      <workItem from="1572352744855" duration="3521000" />
     </task>
     <servers />
   </component>
