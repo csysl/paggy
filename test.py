@@ -9,7 +9,7 @@
     @ref:
 '''
 
-from Cryptodome.Util import number
+from Crypto.Util import number
 import time
 import numpy as np
 from modint import chinese_remainder

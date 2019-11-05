@@ -12,7 +12,7 @@
 import copy
 import random
 import time
-from Cryptodome.Util import number as prime
+from Crypto.Util import number as prime
 
 from encrytion.encrypt import Encryption
 from encrytion.mod import *

@@ -16,22 +16,28 @@
 # import math
 # import time
 # import random
-# import cv2
+import cv2
 import matplotlib.pyplot as plt
 import math
 from pylab import mpl
+import numpy as np
 
 # 解决matplotlib中文乱码问题
-mpl.rcParams['font.sans-serif'] = ['Microsoft YaHei'] # 指定默认字体
-mpl.rcParams['axes.unicode_minus'] = False # 解决保存图像是负号'-'显示为方块的问题
+mpl.rcParams['font.sans-serif'] = ['Microsoft YaHei']  # 指定默认字体
+mpl.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
+
 
 # 显示图片
-def imageshow(img,title):
+def imageshow(img, title, draw=False):
     plt.imshow(img, cmap='gray')
     plt.title(title)
-    plt.show()
+    if draw:
+        cv2.imwrite('resimage/' + title, np.array(img))
+        # plt.savefig('resimage/' + title, dpi=1000)
+    # plt.show()
 
-def calPSNR(sourceimage, targetimage):   #todo 问题：目标图像的范围不在0-255之间
+
+def calPSNR(sourceimage, targetimage):  # todo 问题：目标图像的范围不在0-255之间
     '''
     :param sourceimage:  源图像 都是灰度图，且是列表
     :param targetimage:  目标图像
@@ -50,7 +56,3 @@ def calPSNR(sourceimage, targetimage):   #todo 问题：目标图像的范围不
 
     PSNR = 20 * math.log10(255 / math.sqrt(MSE))
     return PSNR
-
-
-
-

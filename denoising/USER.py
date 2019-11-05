@@ -11,8 +11,8 @@
 import copy
 import random
 import time
-import numba
-from Cryptodome.Util import number as prime
+# import numba
+from Crypto.Util import number as prime
 from multiprocessing import cpu_count
 import multiprocessing as mp
 
@@ -56,7 +56,7 @@ class USER:
         # imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
         # 给灰度图添加高斯噪声
         self.__gaussgrayimage = self.__addgaussnoise()
-        # imageshow(self.__gaussgrayimage, 'gaussgrayimage')
+        imageshow(self.__gaussgrayimage, init.imagepath[4:], True)
         print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
         self.__encryptImage()
         return self.__encryimage[:]
@@ -64,7 +64,7 @@ class USER:
     # TODO 外部执行的解密函数
     def decrypt(self, cipherimg):
         self.__decryptImage(cipherimg)
-        imageshow(self.__denoiseimage, 'denoiseimage')
+        imageshow(self.__denoiseimage, 're' + init.imagepath[4:], True)
         print('去噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__denoiseimage))
 
     #
@@ -174,7 +174,6 @@ class USER:
     def __gainDiag(self, plain):
         self.__diag[0][0] = plain
         self.__diag[1][1], self.__diag[2][2], self.__diag[3][3] = self.__a, self.__b, self.__c
-
 
     def test(self):
         pixel = 0
