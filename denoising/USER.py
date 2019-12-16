@@ -20,6 +20,7 @@ from encrytion.encrypt import Encryption
 from encrytion.mod import *
 import init
 from denoising.image import *
+from skimage.measure import compare_ssim
 
 
 class USER:
@@ -53,11 +54,14 @@ class USER:
     def encrypt(self):
         # 获取灰度图
         self.__grayimage = copy.deepcopy(self.__image).tolist()
-        # imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
+        imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
         # 给灰度图添加高斯噪声
         self.__gaussgrayimage = self.__addgaussnoise()
         imageshow(self.__gaussgrayimage, init.imagepath[4:], True)
         print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
+        (score,diff)=compare_ssim(np.array(self.__grayimage),np.array(self.__gaussgrayimage),full=True)
+        #diff = (diff * 255).astype("uint8")
+        print("SSIM: {}".format(score))
         self.__encryptImage()
         return self.__encryimage[:]
 

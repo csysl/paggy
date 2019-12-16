@@ -10,7 +10,7 @@
 '''
 
 from functools import reduce
-import numba
+#import numba
 
 # 求解a的模n的逆元素
 def mul_inv(a, n):
@@ -24,7 +24,7 @@ def mul_inv(a, n):
     if x1 < 0: x1 += b
     return x1
 
-@numba.jit  #实测没有加速
+#@numba.jit  #实测没有加速
 def chineseremainder(n, a):  # n是模数，a是被模数
     sum = 0
     prod = reduce(lambda a, b: a * b, n)
