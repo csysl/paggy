@@ -12,7 +12,7 @@ import copy
 import random
 import time
 import numpy as np
-from Crypto.Util import number as prime
+# from Crypto.Util import number as prime
 
 from encrytion.encrypt import Encryption
 from encrytion.mod import *
@@ -118,6 +118,7 @@ class CS:
 
         for i in range(self.__length):
             for j in range(self.__width):
+                #print(i * self.__width + j)
                 indi, indj = i + scope, j + scope
                 w1 = self.__padimage[indi - self.__scope:indi + self.__scope + 1,
                      indj - self.__scope:indj + self.__scope + 1]  # 原窗口

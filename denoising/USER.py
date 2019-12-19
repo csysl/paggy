@@ -12,7 +12,7 @@ import copy
 import random
 import time
 # import numba
-from Crypto.Util import number as prime
+#from Crypto.Util import number as prime
 from multiprocessing import cpu_count
 import multiprocessing as mp
 
@@ -59,9 +59,8 @@ class USER:
         self.__gaussgrayimage = self.__addgaussnoise()
         imageshow(self.__gaussgrayimage, init.imagepath[4:], True)
         print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
-        (score,diff)=compare_ssim(np.array(self.__grayimage),np.array(self.__gaussgrayimage),full=True)
-        #diff = (diff * 255).astype("uint8")
-        print("SSIM: {}".format(score))
+        # (score,diff)=compare_ssim(np.array(self.__grayimage),np.array(self.__gaussgrayimage),full=True)
+        # print("加噪图像和源图像的SSIM是: {}".format(score))
         self.__encryptImage()
         return self.__encryimage[:]
 
@@ -70,6 +69,8 @@ class USER:
         self.__decryptImage(cipherimg)
         imageshow(self.__denoiseimage, 're' + init.imagepath[4:], True)
         print('去噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__denoiseimage))
+        # (score, diff) = compare_ssim(np.array(self.__grayimage), np.array(self.__denoiseimage), full=True)
+        # print("去噪图像和源图像的SSIM是: {}".format(score))
 
     #
 

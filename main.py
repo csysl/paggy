@@ -37,6 +37,22 @@ decryptImageRe = cs.CS1decryptI()  # 得到cs1一次解密后的去噪图片
 # 用户得到去噪后图片密文，然后进行解密
 user.decrypt(decryptImageRe)
 
-user.test()
+from SSIM_PIL import compare_ssim
+from PIL import Image
+
+image1 = Image.open('img/' + init.imagepath[4:])
+image2 = Image.open('resimage/' + init.imagepath[4:])
+value = compare_ssim(image1, image2)
+print("去噪图像和源图像的SSIM是", value)
+
+# import tensorflow as tf
+#
+# im1 = tf.decode_png('img/' + init.imagepath[4:])
+# im2 = tf.decode_png('resimage/' + init.imagepath[4:])
+# # Compute SSIM over tf.uint8 Tensors.
+# ssim1 = tf.image.ssim(im1, im2, max_val=255, filter_size=11,
+#                       filter_sigma=1.5, k1=0.01, k2=0.03)
+# print("去噪图像和源图像的SSIM是", ssim1)
 
 
+#user.test()
