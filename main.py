@@ -41,7 +41,7 @@ from SSIM_PIL import compare_ssim
 from PIL import Image
 
 image1 = Image.open('img/' + init.imagepath[4:])
-image2 = Image.open('resimage/' + init.imagepath[4:])
+image2 = Image.open('resimage/re' + init.imagepath[4:])
 value = compare_ssim(image1, image2)
 print("去噪图像和源图像的SSIM是", value)
 

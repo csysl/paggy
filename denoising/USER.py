@@ -68,9 +68,12 @@ class USER:
     def decrypt(self, cipherimg):
         self.__decryptImage(cipherimg)
         imageshow(self.__denoiseimage, 're' + init.imagepath[4:], True)
-        print('去噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__denoiseimage))
+        psnr=calPSNR(self.__grayimage, self.__denoiseimage)
+        print('去噪图像和源图像的PSNR是：', psnr)
         # (score, diff) = compare_ssim(np.array(self.__grayimage), np.array(self.__denoiseimage), full=True)
         # print("去噪图像和源图像的SSIM是: {}".format(score))
+
+        return psnr
 
     #
 

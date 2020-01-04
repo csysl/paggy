@@ -15,6 +15,13 @@ import init
 from encrytion.encrypt import Encryption
 from denoising.USER import USER
 from denoising.CS import CS
+import datetime
+import time
+
+f = open('res' + str(time.time()) + '.txt', 'a')
+print('搜索窗口大小:' + str(init.L), file=f)
+print('滤波窗口大小:' + str(init.S), file=f)
+print('密钥位数:' + str(init.bits), file=f)
 
 images_dir = 'img/'
 
@@ -41,7 +48,21 @@ for root, dirs, files in os.walk(images_dir):
         decryptImageRe = cs.CS1decryptI()  # 得到cs1一次解密后的去噪图片
 
         # 用户得到去噪后图片密文，然后进行解密
-        user.decrypt(decryptImageRe)
+        psnr = user.decrypt(decryptImageRe)
+
+        from SSIM_PIL import compare_ssim
+        from PIL import Image
+
+        image1 = Image.open('img/' + init.imagepath[4:])
+        image2 = Image.open('resimage/re' + init.imagepath[4:])
+        ssim = compare_ssim(image1, image2)
+        print("去噪图像和源图像的SSIM是", ssim)
+
+        systime = datetime.datetime.now()
+        print("计算完图片 " + init.imagepath[4:] + " 的时间是:" + str(systime))
+
+        # 写入结果
+        print(init.imagepath[4:] + ' PSNR: ' + str(psnr) + ', SSIM: ' + str(ssim))
 
 # # todo 读取图片
 # # img = io.imread(init.imagepath)  # length*width*(r,g,b)
