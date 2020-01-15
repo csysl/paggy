@@ -24,7 +24,7 @@ class CS:
     def __init__(self, encryptImage, TP: 'Encryption'):
         # 图片
         self.__originEryptImage = encryptImage
-        self.__length, self.__width = len(encryptImage), len(encryptImage)
+        self.__length, self.__width = len(encryptImage), len(encryptImage[0])
         self.__size = self.__length * self.__width  # 像素个数
         self.__encryimage, self.__padimage, self.__denoiseimage, self.__decryimage = None, None, None, None  # 存放对来自用户的图片加密后的图片和最后要返回给用户的图片
 

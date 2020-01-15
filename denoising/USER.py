@@ -148,11 +148,20 @@ class USER:
 
     # todo 解密函数，对服务器返回的图像解密
     def __decryptImage(self, image):
+        print(len(image),len(image[0]))
+        print(self.__length,self.__width)
         stime = time.time()
         self.__denoiseimage = [[None] * self.__width for i in range(self.__length)]
         for i in range(self.__length):
             for j in range(self.__width):
                 self.__denoiseimage[i][j] = self.__decryption(image[i][j]) // self.__SCAL
+        # self.__denoiseimage = [[None] * len(image[0]) for i in range(len(image))]
+        # for i in range(len(image)):
+        #     for j in range(len(image[0])):
+        #         self.__denoiseimage[i][j] = self.__decryption(image[i][j]) // self.__SCAL
+
+
+
         etime = time.time()
         print('用户解密时间是：%fs' % (etime - stime))
 

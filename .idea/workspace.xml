@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res1578146551.8783114.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res1579075221.7407684.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res1579077353.2652307.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res1579077934.8922465.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/paggy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/paggy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encrytion/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/CS.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/CS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/USER.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resimage/baboon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resimage/lena.png" beforeDir="false" afterPath="$PROJECT_DIR$/resimage/lena.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resimage/relena.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -124,6 +122,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -151,7 +152,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main2.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -162,6 +163,9 @@
       <module name="paggy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -244,6 +248,7 @@
       <workItem from="1576725361455" duration="2985000" />
       <workItem from="1576742632670" duration="1265000" />
       <workItem from="1578144100053" duration="2520000" />
+      <workItem from="1579074485697" duration="2829000" />
     </task>
     <servers />
   </component>
@@ -267,31 +272,37 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="460" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578146622058">
-      <screen x="0" y="0" width="1966" height="789" />
+    <state x="599" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579074881084">
+      <screen x="0" y="33" width="2560" height="994" />
     </state>
     <state x="460" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1966.789@0.0.1966.789" timestamp="1578146622058" />
     <state x="479" y="60" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.824@0.0.2048.824" timestamp="1576467771873" />
-    <state width="1919" height="198" key="GridCell.Tab.0.bottom" timestamp="1578146676065">
-      <screen x="0" y="0" width="1966" height="789" />
+    <state x="599" y="105" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.33.2560.994@0.33.2560.994" timestamp="1579074881084" />
+    <state width="820" height="384" key="GridCell.Tab.0.bottom" timestamp="1579074866588">
+      <screen x="0" y="33" width="2560" height="994" />
     </state>
     <state width="1919" height="198" key="GridCell.Tab.0.bottom/0.0.1966.789@0.0.1966.789" timestamp="1578146676065" />
-    <state width="1919" height="198" key="GridCell.Tab.0.center" timestamp="1578146676065">
-      <screen x="0" y="0" width="1966" height="789" />
+    <state width="820" height="384" key="GridCell.Tab.0.bottom/0.33.2560.994@0.33.2560.994" timestamp="1579074866588" />
+    <state width="820" height="384" key="GridCell.Tab.0.center" timestamp="1579074866587">
+      <screen x="0" y="33" width="2560" height="994" />
     </state>
     <state width="1919" height="198" key="GridCell.Tab.0.center/0.0.1966.789@0.0.1966.789" timestamp="1578146676065" />
-    <state width="1919" height="198" key="GridCell.Tab.0.left" timestamp="1578146676065">
-      <screen x="0" y="0" width="1966" height="789" />
+    <state width="820" height="384" key="GridCell.Tab.0.center/0.33.2560.994@0.33.2560.994" timestamp="1579074866587" />
+    <state width="820" height="384" key="GridCell.Tab.0.left" timestamp="1579074866586">
+      <screen x="0" y="33" width="2560" height="994" />
     </state>
     <state width="1919" height="198" key="GridCell.Tab.0.left/0.0.1966.789@0.0.1966.789" timestamp="1578146676065" />
-    <state width="1919" height="198" key="GridCell.Tab.0.right" timestamp="1578146676065">
-      <screen x="0" y="0" width="1966" height="789" />
+    <state width="820" height="384" key="GridCell.Tab.0.left/0.33.2560.994@0.33.2560.994" timestamp="1579074866586" />
+    <state width="820" height="384" key="GridCell.Tab.0.right" timestamp="1579074866587">
+      <screen x="0" y="33" width="2560" height="994" />
     </state>
     <state width="1919" height="198" key="GridCell.Tab.0.right/0.0.1966.789@0.0.1966.789" timestamp="1578146676065" />
-    <state x="413" y="0" key="SettingsEditor" timestamp="1576334192653">
-      <screen x="0" y="0" width="2048" height="824" />
+    <state width="820" height="384" key="GridCell.Tab.0.right/0.33.2560.994@0.33.2560.994" timestamp="1579074866587" />
+    <state x="516" y="33" key="SettingsEditor" timestamp="1579074494989">
+      <screen x="0" y="33" width="2560" height="994" />
     </state>
     <state x="413" y="0" key="SettingsEditor/0.0.2048.824@0.0.2048.824" timestamp="1576334192653" />
+    <state x="516" y="33" key="SettingsEditor/0.33.2560.994@0.33.2560.994" timestamp="1579074494989" />
     <state x="667" y="24" width="631" height="741" key="find.popup" timestamp="1578145070656">
       <screen x="0" y="0" width="1966" height="789" />
     </state>
@@ -365,7 +376,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/paggy$main.coverage" NAME="main Coverage Results" MODIFIED="1571365764103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/paggy$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1578146649699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/paggy$encrytion.coverage" NAME="encrytion Coverage Results" MODIFIED="1571130505672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/encrytion" />
+    <SUITE FILE_PATH="coverage/paggy$main2.coverage" NAME="main2 Coverage Results" MODIFIED="1579074822663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
