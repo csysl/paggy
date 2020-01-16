@@ -25,8 +25,10 @@ from skimage.measure import compare_ssim
 
 class USER:
 
-    def __init__(self, image, TP: 'Encryption'):
+    def __init__(self, image, imagename, TP: 'Encryption'):
         # 图像
+        self.__imagename=imagename
+
         self.__image = copy.deepcopy(image)
         self.__length, self.__width = len(image), len(image[0])
         self.__size = self.__length * self.__width  # 像素个数
@@ -57,7 +59,7 @@ class USER:
         imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
         # 给灰度图添加高斯噪声
         self.__gaussgrayimage = self.__addgaussnoise()
-        imageshow(self.__gaussgrayimage, init.imagepath[4:], True)
+        imageshow(self.__gaussgrayimage, self.__imagename, True)
         print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
         # (score,diff)=compare_ssim(np.array(self.__grayimage),np.array(self.__gaussgrayimage),full=True)
         # print("加噪图像和源图像的SSIM是: {}".format(score))
@@ -67,7 +69,7 @@ class USER:
     # TODO 外部执行的解密函数
     def decrypt(self, cipherimg):
         self.__decryptImage(cipherimg)
-        imageshow(self.__denoiseimage, 're' + init.imagepath[4:], True)
+        imageshow(self.__denoiseimage, 're' + self.__imagename, True)
         psnr=calPSNR(self.__grayimage, self.__denoiseimage)
         print('去噪图像和源图像的PSNR是：', psnr)
         # (score, diff) = compare_ssim(np.array(self.__grayimage), np.array(self.__denoiseimage), full=True)
