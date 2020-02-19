@@ -31,6 +31,7 @@ for root, dirs, files in os.walk(images_dir):
         init.imagepath = images_dir + image_name
         print('******************', init.imagepath)
         img = cv2.imread(init.imagepath, cv2.IMREAD_GRAYSCALE)
+        # cv2.imshow(image_name, np.array(img))
         cv2.imwrite('grayimage/' + image_name, np.array(img))
 
         # TP为密钥生成器并生成密钥
@@ -41,6 +42,14 @@ for root, dirs, files in os.walk(images_dir):
         # user产生加密图像
         user = USER(image=img, imagename=image_name, TP=TP)
         encryptImage = user.encrypt()
+
+        tmpencryptimage = []
+        for i in range(len(encryptImage)):
+            tmpencryptimage.append([])
+            for j in range(len(encryptImage[0])):
+                tmpencryptimage[i].append(encryptImage[i][j][0][0] % 255)
+        cv2.imwrite('encryimage/' + image_name, np.array(tmpencryptimage))
+        print("加密图像保存成功！")
 
         # cs得到加密图像，产生加密后的距离
         cs = CS(encryptImage=encryptImage, TP=TP)

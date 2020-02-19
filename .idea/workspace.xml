@@ -2,69 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ffad7b5-6614-4ed4-88dd-f3cea0256dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/grayimage/103041.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/117054.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/118035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/124084.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/126039.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/151087.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/161062.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/176035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/22090.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grayimage/71046.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/103041.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/117054.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/118035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/124084.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/126039.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/151087.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/161062.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/176035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/22090.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image1/71046.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/100a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/10a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/11a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/12a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/14a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/15a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/16a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/17a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/18a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image2/1a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/103041.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/117054.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/118035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/124084.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/126039.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/151087.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/161062.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/176035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/22090.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/71046.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re103041.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re117054.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re118035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re124084.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re126039.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re151087.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re161062.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re176035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re22090.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resimage/re71046.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/paggy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/paggy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res1582096466.4174085.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res1582097796.0983863.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res1582097874.9394443.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/denoising/USER.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/USER.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encrytion/encrypt.py" beforeDir="false" afterPath="$PROJECT_DIR$/encrytion/encrypt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/denoising/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/denoising/image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579075221.7407684.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579077353.2652307.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579077934.8922465.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579080823.9937432.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579080824.114604.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579080831.2313223.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res1579080938.675976.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resimage/124084.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resimage/124084.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -306,6 +250,7 @@
       <workItem from="1579074485697" duration="2829000" />
       <workItem from="1579105371836" duration="1295000" />
       <workItem from="1579110082924" duration="2145000" />
+      <workItem from="1582096138739" duration="1925000" />
     </task>
     <servers />
   </component>
@@ -368,21 +313,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/encrytion/encrypt.py</url>
-          <line>364</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/encrytion/encrypt.py</url>
-          <line>190</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/encrytion/encrypt.py</url>
-          <line>196</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/denoising/CS.py</url>
           <line>169</line>

@@ -34,7 +34,7 @@ def imageshow(img, title, draw=False):
     if draw:
         cv2.imwrite('resimage/' + title, np.array(img))
         # plt.savefig('resimage/' + title, dpi=1000)
-    # plt.show()
+    plt.show()
 
 
 def calPSNR(sourceimage, targetimage):  # todo 问题：目标图像的范围不在0-255之间
