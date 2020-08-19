@@ -13,10 +13,12 @@ import init
 from encrytion.encrypt import Encryption
 from denoising.USER import USER
 from denoising.CS import CS
+import numpy as np
 
 # todo 读取图片
 # img = io.imread(init.imagepath)  # length*width*(r,g,b)
 img = cv2.imread(init.imagepath, cv2.IMREAD_GRAYSCALE)
+# cv2.imwrite('grayimage/' + init.imagepath[4:], np.array(img))
 
 # TP为密钥生成器并生成密钥
 TP = Encryption(init.M, init.bits)
@@ -24,7 +26,7 @@ TP.gainParam()  # 生成密钥和参数
 # TP.writeFile()  #将密钥写入到txt，目的是为了c++程序读取
 
 # user产生加密图像
-user = USER(image=img, TP=TP)
+user = USER(image=img, imagename=init.imagepath[4:], TP=TP)
 encryptImage = user.encrypt()
 
 # cs得到加密图像，产生加密后的距离
@@ -40,8 +42,8 @@ user.decrypt(decryptImageRe)
 from SSIM_PIL import compare_ssim
 from PIL import Image
 
-image1 = Image.open('img/' + init.imagepath[4:])
-image2 = Image.open('resimage/re' + init.imagepath[4:])
+image1 = Image.open('resimage/gray' + init.imagepath[4:])
+image2 = Image.open('resimage/result' + init.imagepath[4:])
 value = compare_ssim(image1, image2)
 print("去噪图像和源图像的SSIM是", value)
 
@@ -55,4 +57,4 @@ print("去噪图像和源图像的SSIM是", value)
 # print("去噪图像和源图像的SSIM是", ssim1)
 
 
-#user.test()
+# user.test()

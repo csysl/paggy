@@ -10,8 +10,8 @@
 '''
 import operator
 from functools import reduce
-from Cryptodome.Util import number as prime
-#from Crypto.Util import number as prime
+# from Cryptodome.Util import number as prime
+from Crypto.Util import number as prime
 from encrytion.mod import *
 import random
 import time

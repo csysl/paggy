@@ -51,6 +51,11 @@ class CS:
         # test
         self.__testK, self.__testinvK = TP.K
 
+        # 统计时间
+        self.__CS1caldistime=0
+        self.__CS2calWtime=0
+        self.__CS1denosingtime=0
+
     # 对用户发送的图片进行加密，加密后等同于对图像I使用k加密
     def CS1encryptI(self):
         self.__encryimage = [[None] * self.__width for i in range(self.__length)]
@@ -110,6 +115,11 @@ class CS:
         etime = time.time()
         print('图像去噪时间是: %0.2fs' % (etime - stime))
 
+    def printTime(self):
+        print("CS1计算出距离的时间：",self.__CS1caldistime)
+        print("CS2计算出权重的时间：", self.__CS2calWtime)
+        print("CS1去噪的时间：", self.__CS1denosingtime)
+
     # 非局部均值去噪
     def __NLmean(self):
         self.__denoiseimage = np.zeros((self.__length, self.__width, 4, 4), dtype=object)
@@ -121,34 +131,50 @@ class CS:
                 #print(i * self.__width + j)
                 indi, indj = i + scope, j + scope
                 w1 = self.__padimage[indi - self.__scope:indi + self.__scope + 1,
-                     indj - self.__scope:indj + self.__scope + 1]  # 原窗口
+                     indj - self.__scope:indj + self.__scope + 1]  # 当前要计算的pixel的窗口
                 # print(w1)
 
-                ww = np.zeros((self.__L, self.__L), dtype=object)
+                ww = np.zeros((self.__L, self.__L), dtype=object)  #
 
                 for ii in range(indi - self.__lscope, indi + self.__lscope + 1):
                     for jj in range(indj - self.__lscope, indj + self.__lscope + 1):
                         if ii == indi and jj == indj:
                             continue
                         w2 = self.__padimage[ii - self.__scope:ii + self.__scope + 1,
-                             jj - self.__scope:jj + self.__scope + 1]
-
+                             jj - self.__scope:jj + self.__scope + 1]   #搜索区域内的pixel窗口
+                        sstime=time.time()
                         encryptDis = self.__CS1gainCalDis(w1, w2)
+                        eetime=time.time()
+                        self.__CS1caldistime+=(eetime-sstime)
+
                         decryptDis = self.__CS1gainDecryptDis(encryptDis)
                         dis = self.__CS2gainPlainDis(decryptDis)
+
+                        sstime=time.time()
                         ww[ii - (indi - self.__lscope)][jj - (indj - self.__lscope)] = np.exp(-dis / H2)
+                        eetime = time.time()
+                        self.__CS2calWtime += (eetime - sstime)
 
                 # print(ww.max())
+                sstime = time.time()
                 ww[self.__lscope][self.__lscope] = ww.max()
                 plainW = self.__CS2gainPlainW(ww)  # 得到去噪参数
+                eetime = time.time()
+                self.__CS2calWtime += (eetime - sstime)
+
                 # print('参数：', plainW)
                 cipherW = self.__CS2gainCipherW(plainW)  # CS2对去噪参数加密
                 # print(cipherW)
                 cipherW = self.__CS1gainCipherW(cipherW)  # CS1对去噪参数加密
                 # print(cipherW)
+
+                sstime=time.time()
                 self.__denoiseimage[i][j] = self.__CS1denoising(cipherW, self.__padimage[
                                                                          indi - self.__lscope:indi + self.__lscope + 1,
                                                                          indj - self.__lscope:indj + self.__lscope + 1])
+                eetime = time.time()
+                self.__CS1denosingtime += (eetime - sstime)
+
                 # print(self.__denoiseimage[i][j])
                 #
                 # return

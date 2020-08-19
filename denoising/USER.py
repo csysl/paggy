@@ -56,10 +56,10 @@ class USER:
     def encrypt(self):
         # 获取灰度图
         self.__grayimage = copy.deepcopy(self.__image).tolist()
-        imageshow(self.__grayimage, 'grayimage')  # 显示灰度图
+        imageshow(self.__grayimage, 'gray'+self.__imagename, True)  # 显示灰度图
         # 给灰度图添加高斯噪声
         self.__gaussgrayimage = self.__addgaussnoise()
-        imageshow(self.__gaussgrayimage, self.__imagename, True)
+        imageshow(self.__gaussgrayimage, 'gauss'+self.__imagename, True)
         print('加噪图像和源图像的PSNR是：', calPSNR(self.__grayimage, self.__gaussgrayimage))
         # (score,diff)=compare_ssim(np.array(self.__grayimage),np.array(self.__gaussgrayimage),full=True)
         # print("加噪图像和源图像的SSIM是: {}".format(score))
@@ -69,7 +69,7 @@ class USER:
     # TODO 外部执行的解密函数
     def decrypt(self, cipherimg):
         self.__decryptImage(cipherimg)
-        imageshow(self.__denoiseimage, 're' + self.__imagename, True)
+        imageshow(self.__denoiseimage, 'result' + self.__imagename, True)
         psnr=calPSNR(self.__grayimage, self.__denoiseimage)
         print('去噪图像和源图像的PSNR是：', psnr)
         # (score, diff) = compare_ssim(np.array(self.__grayimage), np.array(self.__denoiseimage), full=True)

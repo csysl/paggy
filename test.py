@@ -10,7 +10,19 @@
 '''
 
 from datetime import datetime
-now = datetime.now().time() # time object
+now = datetime.now() # time object
+
+
+endtime=datetime.now()
+
+
+print(endtime-now)
+
+
+
+
+
+
 print("now =", now)
 print("type(now) =", type(now))
 

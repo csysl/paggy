@@ -58,6 +58,8 @@ for root, dirs, files in os.walk(images_dir):
         cs.Cs1Cs2Denoising()  # cs1和cs2去噪的全过程
         decryptImageRe = cs.CS1decryptI()  # 得到cs1一次解密后的去噪图片
 
+        cs.printTime() #输出时间
+
         # 用户得到去噪后图片密文，然后进行解密
         psnr = user.decrypt(decryptImageRe)
 
@@ -65,10 +67,9 @@ for root, dirs, files in os.walk(images_dir):
         from PIL import Image
 
         image1 = Image.open('grayimage/' + image_name)
-        image2 = Image.open('resimage/re' + image_name)
+        image2 = Image.open('resimage/result' + image_name)
         ssim = compare_ssim(image1, image2)
         print("去噪图像和源图像的SSIM是", ssim)
-
         systime = datetime.datetime.now()
         print("计算完图片 " + image_name + " 的时间是:" + str(systime))
 
